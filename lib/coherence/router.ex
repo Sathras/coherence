@@ -85,10 +85,10 @@ defmodule Coherence.Router do
 
       if mode == :all or mode == :public do
         if Coherence.Config.has_action?(:authenticatable, :new), do:
-          get "/login", Coherence.RegistrationController, :new
+          get "/login", Coherence.SessionController, :new
 
         if Coherence.Config.has_action?(:authenticatable, :create), do:
-          post "/login", Coherence.RegistrationController, :create
+          post "/login", Coherence.SessionController, :create
 
         if Coherence.Config.has_action?(:registerable, :new), do:
           get "/register", Coherence.RegistrationController, :new
